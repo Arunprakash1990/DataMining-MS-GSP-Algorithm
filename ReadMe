@@ -1,5 +1,27 @@
-Mining Sequential Patterns Based on GSP (Generalized Sequential Patterns) MS-GSP algorithm - Sequential pattern mining using multiple minimum supports with a support difference constraint.
-Input format:
+###Mining Sequential Patterns Based on GSP (Generalized Sequential Patterns) MS-GSP algorithm - Sequential pattern mining using multiple minimum supports with a support difference constraint.
+
+**What MS-GSP does?**
+The algorithm is used for finding sequential patterns of frequent item sets that customers purchase from a supermarket.
+
+**Where it is used?**
+It is used in the application of market basket data analysis to find out which items in a store are most profitable.
+
+**How it works?**
+So, if we provide an input of a set of transactions made by each customer, the algorithm will output the frequent item sets.
+At each pass, it calculates the support of every combination of item sets and compares it with a minimum support threshold and determines if that combination of items is frequent.
+
+**Data structures used: **
+I used a hash based implementation for efficient support counting and an array list to store the frequent item sets at each iteration. (Look up advantages of hash map for searching)
+
+**Advantage of this algorithm over other algorithms**
+It is better than the standard Apriori algorithm as it takes into account the “time constraint”.GSP is based on Apriori but takes into account the order of the items and finds sequences.
+
+
+
+
+
+
+**Input format:**
 data.txt:Each line represents a Transaction Sequence and each set in a sequence represents a set of items.
 <{20, 30, 80}{70}{50, 70}>
 <{20, 30}{30, 70, 80}>
@@ -20,6 +42,6 @@ MIS(80) = 0.20
 MIS(90) = 0.20
 Support_Diff_Constraint = 0.1
 
-Output format:
+**Output format:**
 Pattern :<{30,20}{70,80}{20,30,70}> count: 10
 
